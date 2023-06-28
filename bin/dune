@@ -1,0 +1,11 @@
+(executable
+ (public_name remarcaml)
+ (name main)
+ (modules main)
+ (libraries remarcaml))
+
+(executable
+ (public_name remarcaml_dialect)
+ (name remarcaml_dialect)
+ (modules remarcaml_dialect)
+ (libraries remarcaml fmt base bos))

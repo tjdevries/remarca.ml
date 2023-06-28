@@ -1,0 +1,5 @@
+(library
+ (name remarcaml)
+ (libraries base fmt ppx_sexp_conv sexplib)
+ (modules nodes)
+ (preprocess (pps ppx_deriving.ord ppx_sexp_conv)))

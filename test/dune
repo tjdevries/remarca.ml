@@ -1,0 +1,3 @@
+(test
+ (name remarcaml_test)
+ (libraries remarcaml))
