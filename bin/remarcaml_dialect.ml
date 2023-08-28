@@ -1,21 +1,24 @@
 open Base
+open Remarcaml
 
 let args = Sys.get_argv () |> Array.to_list
 
 let () =
-  (* Fmt.pr "let x = 10\n"; *)
-  (* Fmt.pr "(*\n"; *)
-  (* List.iter args ~f:(Fmt.pr "%s\n"); *)
-  (* Fmt.pr "*)\n"; *)
   let filename = List.nth_exn args 1 in
   let contents = Bos.OS.File.read (Fpath.v filename) in
   let contents =
     match contents with
-    | Ok contents ->
-      Fmt.str
-        "let node1 = Remarcaml.Nodes.new_text {|%s|} |> Remarcaml.Nodes.Builtin.italic \n"
-        (String.strip contents)
-    | _ -> assert false
+    | Ok contents -> Parse.parse (String.strip contents)
+    | Error _ ->
+      Fmt.pr "Parse to read : %s" filename;
+      Stdlib.exit 0
+  in
+  let generated =
+    match contents with
+    | Ok contents -> Generate.generate contents
+    | Error err ->
+      Fmt.pr "Generated failed with: %s" err;
+      Stdlib.exit 0
   in
   Fmt.pr
     {|
@@ -29,5 +32,5 @@ module File (* : Remarcaml.FILE *) = struct
   let nodes = [node1]
 end |}
     filename
-    contents
+    generated
 ;;

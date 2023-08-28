@@ -18,6 +18,7 @@
   (implementation
     (extension "rl")
     (preprocess (run remarcaml_dialect %{input-file})))
+    ;; TODO: Add format, not sure how to call ocamlformat
   (interface
     (extension "rli")))
 
@@ -25,7 +26,7 @@
  (name remarcaml)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune base fmt ppx_deriving ppx_sexp_conv sexplib bos)
+ (depends ocaml dune base fmt ppx_deriving ppx_sexp_conv sexplib bos compiler-libs angstrom)
  (tags
   (topics "to describe" your project)))
 

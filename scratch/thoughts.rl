@@ -7,6 +7,10 @@
 # open Base
 # let golang_link = "https://golang.com/gopher.png" 
 
+This is not ocaml.
+
+# print_endline "this is ocaml"
+
 #(let golang_link =
         "https://golang.com/gopher.png")
 
