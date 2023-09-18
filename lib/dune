@@ -1,5 +1,8 @@
+(menhir (modules oparse))
+(ocamllex olex)
+
 (library
  (name remarcaml)
- (modules nodes parse generate)
+ (modules nodes parse generate oparse other)
  (libraries base fmt ppx_sexp_conv sexplib angstrom)
  (preprocess (pps ppx_deriving.ord ppx_sexp_conv)))

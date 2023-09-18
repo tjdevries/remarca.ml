@@ -1,3 +1,5 @@
+[@@@warning "-32"]
+
 open Base
 open Angstrom
 

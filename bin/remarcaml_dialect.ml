@@ -29,7 +29,7 @@ end
 module File (* : Remarcaml.FILE *) = struct
   %s
 
-  let nodes = [node1]
+  let nodes = [node0]
 end |}
     filename
     generated

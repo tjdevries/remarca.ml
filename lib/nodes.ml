@@ -94,3 +94,8 @@ end
 let new_text s = Text s
 let new_document statements = { statements }
 let new_statement node = [ node ]
+
+type element =
+  | Container of Attribute.t * element list
+  | Text of string
+  | Literal of string

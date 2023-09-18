@@ -3,6 +3,7 @@
 (name remarcaml)
 
 (generate_opam_files true)
+(using menhir 2.1)
 
 (source
  (github tjdevries/remarcaml))
@@ -26,7 +27,7 @@
  (name remarcaml)
  (synopsis "A short synopsis")
  (description "A longer description")
- (depends ocaml dune base fmt ppx_deriving ppx_sexp_conv sexplib bos compiler-libs angstrom)
+ (depends ocaml dune base fmt ppx_deriving ppx_sexp_conv sexplib bos angstrom)
  (tags
   (topics "to describe" your project)))
 
